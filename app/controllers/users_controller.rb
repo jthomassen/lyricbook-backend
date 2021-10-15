@@ -2,6 +2,8 @@ class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def create
+        puts "fsal"
+        puts user_params
         @user = User.create(user_params)
         if @user.valid?
           render json: { user: UserSerializer.new(@user) }, status: :created
@@ -50,6 +52,8 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :password, :bio, :profile_img)
+        puts "gdsga"
+        puts params
+        params.require(:user).permit(:username, :password)
     end
 end
