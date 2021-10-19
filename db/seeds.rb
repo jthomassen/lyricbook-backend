@@ -5,9 +5,9 @@ Lyric.destroy_all
 puts "Seeding data..."
 
 #users
-jeff = User.create!(username: "jthomassen", bio: "Songwriter from Denver, CO ...", profile_img: "")
-john = User.create!(username: "johnsmith", bio: "Songwriter from Minneapolis, MN ...", profile_img: "")
-suzy = User.create!(username: "suzywaters", bio: "Songwriter from Philadelphia, PE ...", profile_img: "")
+jeff = User.create!(username: "jthomassen", password: "123", bio: "Songwriter from Denver, CO ...", profile_img: "")
+john = User.create!(username: "johnsmith", password: "123", bio: "Songwriter from Minneapolis, MN ...", profile_img: "")
+suzy = User.create!(username: "suzywaters", password: "123", bio: "Songwriter from Philadelphia, PE ...", profile_img: "")
 
 #lyrics
 
