@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :lyrics, only: [:index, :show, :create, :update, :destroy]
-  resources :users, only: [:index, :create]
+  resources :users, only: [:create]
 
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'

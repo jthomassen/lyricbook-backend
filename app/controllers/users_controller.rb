@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     end
 
     def create
+        puts "fasdlkfja"
+        puts user_params
         @user = User.create(user_params)
         if @user.valid?
             @token = encode_token({ user_id: @user.id })
@@ -16,9 +18,9 @@ class UsersController < ApplicationController
     end
 
 
-    def index
-        render json: User.all
-    end
+    # def index
+    #     render json: User.all
+    # end
 
     # def show
     #     user = User.find_by(id: params[:id])
@@ -52,6 +54,8 @@ class UsersController < ApplicationController
     # end
 
     def user_params
+        puts "fasdfa"
+        puts params
         params.require(:user).permit(:username, :password, :bio, :profile_img)
     end
 end
