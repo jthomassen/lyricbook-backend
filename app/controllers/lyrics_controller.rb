@@ -25,7 +25,6 @@ class LyricsController < ApplicationController
     end
 
     def destroy 
-        
         lyric = Lyric.find_by(id:params[:id])
         puts lyric
         puts "fadsfasdfasdgfas"
@@ -44,6 +43,8 @@ class LyricsController < ApplicationController
     end
 
     def lyric_params
-        params.permit(:id, :title, :artist_name, :content, :copyright_name, :user_id, :lyric)
+        puts params
+        puts "fsadfasldkfjalskdfjalsdkfj"
+        params.require(:lyric).permit(:id, :title, :artist_name, :content, :copyright_name, :copyright_year, :user_id)
     end
 end
